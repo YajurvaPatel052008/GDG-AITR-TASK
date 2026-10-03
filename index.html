@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover useful development resources, tools, documentation and learning materials.">
+    <title>Developer Resource Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header" id="home">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a class="brand" href="#home" aria-label="Developer Resource Hub home">
+                <span class="brand-icon" aria-hidden="true">&lt;/&gt;</span>
+                <span>Developer Resource Hub</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#add-resource">Add Resource</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container" aria-labelledby="hero-title">
+            <p class="eyebrow">Web <span>•</span> App <span>•</span> AI/ML <span>•</span> Tools</p>
+            <h1 id="hero-title">Developer Resource Hub</h1>
+            <p class="hero-description">Find useful resources, tools, documentation and learning material for your development journey.</p>
+            <a class="primary-button" href="#resources">Explore Resources <span aria-hidden="true">→</span></a>
+        </section>
+
+        <section class="resources-section" id="resources" aria-labelledby="resources-title">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-label">Curated collection</p>
+                        <h2 id="resources-title">Explore resources</h2>
+                    </div>
+                    <p id="result-count" class="result-count" aria-live="polite">0 resources found</p>
+                </div>
+
+                <div class="search-controls" role="search">
+                    <div class="field search-field">
+                        <label for="search-input">Search resources</label>
+                        <div class="input-with-icon">
+                            <span aria-hidden="true">⌕</span>
+                            <input type="search" id="search-input" placeholder="Search resources..." autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="field filter-field">
+                        <label for="category-filter">Category</label>
+                        <select id="category-filter">
+                            <option value="All">All</option>
+                            <option value="Web Dev">Web Dev</option>
+                            <option value="App Dev">App Dev</option>
+                            <option value="AI/ML">AI/ML</option>
+                            <option value="Tools">Tools</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="resource-grid" class="resource-grid" aria-live="polite"></div>
+
+                <div id="empty-state" class="empty-state" hidden>
+                    <span class="empty-icon" aria-hidden="true">{ }</span>
+                    <h3>No resources found.</h3>
+                    <p>Try another keyword or category.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="add-section" id="add-resource" aria-labelledby="add-title">
+            <div class="container add-layout">
+                <div class="add-intro">
+                    <p class="section-label">Share with the community</p>
+                    <h2 id="add-title">Add a Resource</h2>
+                    <p>Found something useful? Add it to your personal collection so it is ready for your next project.</p>
+                </div>
+
+                <form id="resource-form" class="resource-form" novalidate>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="resource-title">Title</label>
+                            <input type="text" id="resource-title" name="title" placeholder="e.g. CSS Tricks" maxlength="80" required>
+                        </div>
+                        <div class="field">
+                            <label for="resource-category">Category</label>
+                            <select id="resource-category" name="category" required>
+                                <option value="">Select a category</option>
+                                <option value="Web Dev">Web Dev</option>
+                                <option value="App Dev">App Dev</option>
+                                <option value="AI/ML">AI/ML</option>
+                                <option value="Tools">Tools</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="resource-description">Description</label>
+                        <textarea id="resource-description" name="description" rows="4" placeholder="What makes this resource useful?" maxlength="240" required></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="resource-link">Resource Link</label>
+                        <input type="url" id="resource-link" name="link" placeholder="https://example.com" maxlength="500" required>
+                    </div>
+                    <div class="form-footer">
+                        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+                        <button class="primary-button" type="submit">Add Resource <span aria-hidden="true">＋</span></button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p><span aria-hidden="true">&lt;/&gt;</span> Developer Resource Hub</p>
+            <p>Built for developers, by developers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
